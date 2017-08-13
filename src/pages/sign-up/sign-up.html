@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crear cuenta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Correo</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Contraseña</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+  <div class="form-item">
+    <button ion-button (click)="createAccount()">Crear cuenta</button>
+    <button ion-button (click)="createAccountWithGoogle()">
+      <ion-icon name="logo-google"></ion-icon> &nbsp; Ingresar con Google
+    </button>
+    <button ion-button (click)="createAccountWithFacebook()">
+      <ion-icon name="logo-facebook"></ion-icon> &nbsp; Ingresar con Facebook
+    </button>
+  </div>
+</ion-content>

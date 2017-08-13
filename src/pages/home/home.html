@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>ionFirebase</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <div *ngIf="!auth.token">
+    <h4>Inicia sesión</h4>
+  </div>
+  <div *ngIf="auth.token">
+    <input type="file" multiple="true" (change)="fileChange($event)">
+    <button ion-button secondary (click)="submit()"> Subir archivos</button>
+  </div>
 </ion-content>
