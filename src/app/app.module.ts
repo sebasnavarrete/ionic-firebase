@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { Hotspot, HotspotNetwork } from '@ionic-native/hotspot';
+import { EstimoteBeacons } from '@ionic-native/estimote-beacons';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import {SignUpPage} from "../pages/sign-up/sign-up";
 
 import {AngularFireModule} from "angularfire2";
@@ -22,7 +23,6 @@ import {Uploader} from "../services/uploader";
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     SignUpPage
   ],
   imports: [
@@ -36,7 +36,6 @@ import {Uploader} from "../services/uploader";
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     SignUpPage
   ],
   providers: [
@@ -44,7 +43,9 @@ import {Uploader} from "../services/uploader";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Authentication,
-    Uploader
+    Uploader,
+    Hotspot,
+    EstimoteBeacons
   ]
 })
 export class AppModule {}

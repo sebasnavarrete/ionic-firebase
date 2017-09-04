@@ -15,4 +15,14 @@
     <input type="file" multiple="true" (change)="fileChange($event)">
     <button ion-button secondary (click)="submit()"> Subir archivos</button>
   </div>
+  <div>
+    <ion-list>
+      <ion-list-header>
+        Beacons
+      </ion-list-header>
+      <ion-item *ngFor="let beacon of beacons;trackBy: trackByFn; let i = index;">{{i}} =>
+        {{getBeaconName(beacon.macAddress)}} => {{beacon.distance | number : '1.2-5'}}
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
